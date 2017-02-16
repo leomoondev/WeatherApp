@@ -29,26 +29,26 @@
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
 
 
-    City *cityVancouver = [[City alloc] initWithCityName:@"Vancouver" initWithCityWeatherDescription:@"Sunny" initWithCityTemperature:10.0];
-    City *cityToronto = [[City alloc] initWithCityName:@"Toronto" initWithCityWeatherDescription:@"Cloudy" initWithCityTemperature:20.0];
-    City *citySeattle = [[City alloc] initWithCityName:@"Seattle" initWithCityWeatherDescription:@"Rainy" initWithCityTemperature:15.0];
-    City *cityHouston = [[City alloc] initWithCityName:@"Houston" initWithCityWeatherDescription:@"Windy" initWithCityTemperature:5.0];
-    City *cityParis = [[City alloc] initWithCityName:@"Paris" initWithCityWeatherDescription:@"Snowy" initWithCityTemperature:-10.0];
+    City *cityVancouver = [[City alloc] initWithCityName:@"Vancouver" initWithCityWeatherDescription:@"Sunny" initWithCityTemperature:10.0 initWithCityPrecipitation:0];
+    City *cityToronto = [[City alloc] initWithCityName:@"Toronto" initWithCityWeatherDescription:@"Cloudy" initWithCityTemperature:20.0 initWithCityPrecipitation:50];
+    City *citySeattle = [[City alloc] initWithCityName:@"Seattle" initWithCityWeatherDescription:@"Rainy" initWithCityTemperature:15.0 initWithCityPrecipitation:100];
+    City *cityChicago = [[City alloc] initWithCityName:@"Chicago" initWithCityWeatherDescription:@"Windy" initWithCityTemperature:5.0 initWithCityPrecipitation:80];
+    City *cityParis = [[City alloc] initWithCityName:@"Paris" initWithCityWeatherDescription:@"Snowy" initWithCityTemperature:-10.0 initWithCityPrecipitation:40];
     
     CityViewController *cityVCVancouer = [[CityViewController alloc] initWithCityName:cityVancouver];
     CityViewController *cityVCToronto = [[CityViewController alloc] initWithCityName:cityToronto];
     CityViewController *cityVCSeattle = [[CityViewController alloc] initWithCityName:citySeattle];
-    CityViewController *cityVCHouston = [[CityViewController alloc] initWithCityName:cityHouston];
+    CityViewController *cityVCChicago = [[CityViewController alloc] initWithCityName:cityChicago];
     CityViewController *cityVCParis = [[CityViewController alloc] initWithCityName:cityParis];
     
     UINavigationController *navVancouver = [[UINavigationController alloc] initWithRootViewController:cityVCVancouer];
     UINavigationController *navToronto = [[UINavigationController alloc] initWithRootViewController:cityVCToronto];
     UINavigationController *navSeattle = [[UINavigationController alloc] initWithRootViewController:cityVCSeattle];
-    UINavigationController *navHouston = [[UINavigationController alloc] initWithRootViewController:cityVCHouston];
+    UINavigationController *navChicago = [[UINavigationController alloc] initWithRootViewController:cityVCChicago];
     UINavigationController *navParis = [[UINavigationController alloc] initWithRootViewController:cityVCParis];
 
     
-    tabBarController.viewControllers = @[navVancouver, navToronto, navSeattle, navHouston, navParis];
+    tabBarController.viewControllers = @[navVancouver, navToronto, navSeattle, navChicago, navParis];
     
     [self.window setRootViewController:tabBarController];
 

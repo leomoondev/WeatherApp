@@ -14,7 +14,8 @@
 @property NSString *cityWeatherDescription;
 
 @property (nonatomic) float cityTemperature;
+@property (nonatomic) int cityPrecipitation;
 
-- (instancetype)initWithCityName:(NSString*)cityName initWithCityWeatherDescription:(NSString*) cityWeatherDescription initWithCityTemperature:(float) cityTemperature;
+- (instancetype)initWithCityName:(NSString*)cityName initWithCityWeatherDescription:(NSString*) cityWeatherDescription initWithCityTemperature:(float) cityTemperature initWithCityPrecipitation:(int)cityPrecipitation;
 
 @end

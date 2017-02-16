@@ -10,9 +10,9 @@
 #import "City.h"
 
 @interface DetailedViewController : UIViewController
-@property City *cityName;
 
-- (instancetype)initWithCityName: (City*)cityName;
-- (void) createStoryBoardDetails;
+@property (nonatomic, strong) City *cityNameDetailedVC;
+- (instancetype)initWithCityName: (City*)cityNameDetailedVC;
+- (void) showMoreDetails;
 
 @end

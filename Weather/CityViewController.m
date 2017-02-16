@@ -17,6 +17,7 @@
         self.title = cityNameVC.cityName;
         _cityNameVC = cityNameVC;
 
+        [self goToNextScreen];
         [self showWeatherDetails];
         
     }
@@ -25,9 +26,16 @@
 
 - (void) showWeatherDetails {
     
-    self.view.backgroundColor = [UIColor orangeColor];
 
-    DetailedViewController *showDetails = [[DetailedViewController alloc] initWithCityName:self.cityNameVC];
+    DetailedViewController *nextScreen = [[DetailedViewController alloc] initWithCityName:self.cityNameVC];
+    
+    [self.navigationController pushViewController:nextScreen animated:YES];
+
+}
+
+- (void)goToNextScreen {
+    //write the required code here, button is same as the favbutton which is written above.
+    self.view.backgroundColor = [UIColor orangeColor];
     
     UILabel *showCity = [[UILabel alloc] initWithFrame:CGRectMake(10, 75, 300, 20)];
     showCity.text = [NSString stringWithFormat:@"City: %@", self.cityNameVC.cityName];
@@ -36,13 +44,10 @@
     UILabel *showDescription = [[UILabel alloc] initWithFrame:CGRectMake(10, 100, 300, 20)];
     showDescription.text = [NSString stringWithFormat:@"Weather: %@", self.cityNameVC.cityWeatherDescription];
     showDescription.textColor = [UIColor whiteColor];
-
-    UILabel *showTemperature = [[UILabel alloc] initWithFrame:CGRectMake(10, 125, 300, 20)];
-    showTemperature.text = [NSString stringWithFormat:@"Temperature: %.1f", self.cityNameVC.cityTemperature];
-    showTemperature.textColor = [UIColor whiteColor];
     
-    UIImageView *showWeatherIcon = [[UIImageView alloc] initWithFrame:CGRectMake(25, 160, 50, 50)];
-
+    UIImageView *showWeatherIcon = [[UIImageView alloc] initWithFrame:CGRectMake(25, 135, 50, 50)];
+    
+    
     if ([self.cityNameVC.cityWeatherDescription isEqualToString:@"Sunny"]) {
         showWeatherIcon.image = [UIImage imageNamed:@"Sunny.png"];
     }
@@ -62,17 +67,19 @@
     else {
         showWeatherIcon.image = nil;
     }
-
+    
     [self.view addSubview:showCity];
     [self.view addSubview:showDescription];
-    [self.view addSubview:showTemperature];
     [self.view addSubview:showWeatherIcon];
-
-    [self.navigationController pushViewController:showDetails animated:YES];
-
+    
+    UIButton * btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    btn.frame = CGRectMake(25, 300, 300, 50);
+    [btn setTitle:@"See More Details" forState:UIControlStateNormal];
+    [btn addTarget:self
+            action:@selector(showWeatherDetails)
+  forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:btn];
 }
-
-
-
 
 @end

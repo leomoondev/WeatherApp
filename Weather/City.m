@@ -10,13 +10,14 @@
 
 @implementation City
 
-- (instancetype)initWithCityName:(NSString*)cityName initWithCityWeatherDescription:(NSString*) cityWeatherDescription initWithCityTemperature:(float) cityTemperature {
+- (instancetype)initWithCityName:(NSString*)cityName initWithCityWeatherDescription:(NSString*) cityWeatherDescription initWithCityTemperature:(float) cityTemperature initWithCityPrecipitation:(int)cityPrecipitation {
     
     if (self = [super init]) {
         
         _cityName = cityName;
         _cityWeatherDescription = cityWeatherDescription;
         _cityTemperature = cityTemperature;
+        _cityPrecipitation = cityPrecipitation;
     }
     return self;
 }
