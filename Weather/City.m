@@ -16,7 +16,7 @@
         
         _cityName = cityName;
         _cityWeatherDescription = cityWeatherDescription;
-        _cityTemperature = &cityTemperature;
+        _cityTemperature = cityTemperature;
     }
     return self;
 }

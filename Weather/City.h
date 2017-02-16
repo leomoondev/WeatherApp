@@ -13,7 +13,7 @@
 @property NSString *cityName;
 @property NSString *cityWeatherDescription;
 
-@property (nonatomic) float * cityTemperature;
+@property (nonatomic) float cityTemperature;
 
 - (instancetype)initWithCityName:(NSString*)cityName initWithCityWeatherDescription:(NSString*) cityWeatherDescription initWithCityTemperature:(float) cityTemperature;
 

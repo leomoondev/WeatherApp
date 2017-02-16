@@ -14,9 +14,7 @@
 
 @property (nonatomic, strong) City *cityNameVC;
 
-
 - (instancetype)initWithCityName:(City*)cityNameVC;
-
 - (void) showWeatherDetails;
 
 

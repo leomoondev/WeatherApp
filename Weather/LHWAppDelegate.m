@@ -46,9 +46,10 @@
     UINavigationController *navSeattle = [[UINavigationController alloc] initWithRootViewController:cityVCSeattle];
     UINavigationController *navHouston = [[UINavigationController alloc] initWithRootViewController:cityVCHouston];
     UINavigationController *navParis = [[UINavigationController alloc] initWithRootViewController:cityVCParis];
+
     
     tabBarController.viewControllers = @[navVancouver, navToronto, navSeattle, navHouston, navParis];
-
+    
     [self.window setRootViewController:tabBarController];
 
     [self.window makeKeyAndVisible];
